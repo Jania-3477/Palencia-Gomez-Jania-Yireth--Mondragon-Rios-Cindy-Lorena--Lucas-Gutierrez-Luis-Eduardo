@@ -1,0 +1,177 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 246);
+  --cardBG: rgb(225, 225, 235);
+}
+
+.header {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: var(--whiteColorDeam);
+  width: 100%;
+  padding: 1rem;
+  z-index: 1000;
+  -webkit-box-shadow: 0 2px 4px rgba(2, 15, 29, 0.452);
+          box-shadow: 0 2px 4px rgba(2, 15, 29, 0.452);
+}
+
+.header .logo {
+  color: var(--blackColor);
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .logo .icon {
+  font-size: 25px;
+  color: var(--PrimaryColor);
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+}
+
+.header .toggleNavbar .icon {
+  font-size: 25px;
+  color: var(--PrimaryColor);
+}
+
+.header .toggleNavbar:hover.icon {
+  color: var(--SecondaryColor);
+}
+
+@media screen and (max-width: 786px) {
+  .navBar {
+    position: absolute;
+    background-color: var(--whiteColorDeam);
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    width: 80%;
+    border-radius: 1rem;
+    top: -500rem;
+    left: 50%;
+    padding: 1rem;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+    z-index: 2000;
+    -webkit-box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+            box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+  }
+  .navBar .navList {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    margin: auto;
+    padding: .5rem 0;
+  }
+  .navBar .navList .navItem {
+    padding: .5rem 0;
+  }
+  .navBar .navList .navItem .navLink {
+    color: var(--textColor);
+    font-size: .9rem;
+    font-weight: 600;
+  }
+  .navBar .navList .navItem .navLink:hover {
+    color: var(--PrimaryColor);
+  }
+  .navBar .navList .btn {
+    margin-top: 1rem;
+  }
+  .navBar .navList .btn a {
+    font-weight: 600;
+    color: var(--whiteColor);
+  }
+  .navBar .closeNavbar {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--PrimaryColor);
+  }
+  .navBar .closeNavbar:hover {
+    color: var(--SecondaryColor);
+  }
+  .activeNavbar {
+    top: 7rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .toggleNavbar, .closeNavbar {
+    display: none;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+  }
+  .header .navBar .navList {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .header .navBar .navList .navItem .navLink {
+    color: var(--textColor);
+    padding: 0 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .header .navBar .navList .navItem .navLink:hover {
+    color: var(--PrimaryColor);
+  }
+  .header .navBar .navList .btn {
+    margin-left: 1rem;
+  }
+  .header .navBar .navList .btn a {
+    color: var(--whiteColor);
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .header .navBar .navList .navItem {
+    padding: 0 0.7rem;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .header {
+    padding: 1rem 8.5rem;
+  }
+}
+/*# sourceMappingURL=navbar.css.map */

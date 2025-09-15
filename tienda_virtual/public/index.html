@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PrimePhone - Tienda</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <link rel="icon" href="data:,">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">PrimePhone</a>
+      <div class="ms-auto d-flex align-items-center">
+        <!-- Si hay user en session muestra nombre, sino login/register -->
+        <div id="nav-user-area" class="d-flex align-items-center">
+          <button id="btnLoginNav" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#loginModal" aria-label="Iniciar sesión">
+            <i class="fa fa-user"></i>
+          </button>
+          <button id="btnRegisterNav" class="btn btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#registerModal">Registrarse</button>
+        </div>
+        <a class="btn btn-success" href="/carrito.html"><i class="fa fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <div class="p-4 bg-light rounded-3">
+          <h2>Bienvenido a PrimePhone</h2>
+          <p>Productos disponibles:</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-3 h-100">
+          <h6>Contacto rápido</h6>
+          <form id="contactForm" class="needs-validation" novalidate>
+            <input id="contactName" name="nombre" class="form-control mb-2" placeholder="Nombre" autocomplete="name" required />
+            <textarea id="contactMessage" name="mensaje" class="form-control mb-2" rows="2" placeholder="Mensaje" required></textarea>
+            <div class="text-end">
+              <button id="contactSubmit" type="submit" class="btn btn-primary btn-sm">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <h4 class="mb-3">Productos</h4>
+      <div id="products" class="row g-3"></div>
+      <div class="text-center mt-4">
+        <button id="btnShowMore" class="btn btn-outline-secondary">Mostrar más</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Login -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <h5 class="modal-title">Iniciar sesión</h5>
+        <form id="loginForm" class="needs-validation" novalidate>
+          <input id="loginUser" name="correo" class="form-control mb-2" placeholder="usuario/email" autocomplete="username" required />
+          <input id="loginPass" name="password" type="password" class="form-control mb-2" placeholder="contraseña" autocomplete="current-password" required />
+          <div class="text-end"><button id="loginSubmit" type="submit" class="btn btn-success btn-sm">Entrar</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Registro -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <h5 class="modal-title">Crear cuenta</h5>
+        <form id="registerForm" class="needs-validation" novalidate>
+          <input id="regName" name="nombre" class="form-control mb-2" placeholder="Nombre completo" autocomplete="name" required />
+          <input id="regEmail" name="correo" type="email" class="form-control mb-2" placeholder="Correo electrónico" autocomplete="email" required />
+          <input id="regPass" name="password" type="password" class="form-control mb-2" placeholder="Contraseña (mín 6 caracteres)" autocomplete="new-password" required />
+          <input id="regPass2" type="password" class="form-control mb-2" placeholder="Confirmar contraseña" autocomplete="new-password" required />
+          <div class="text-end"><button id="registerSubmit" type="submit" class="btn btn-primary btn-sm">Crear cuenta</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 bg-white text-center border-top">
+    <small>PrimePhone • Demo</small>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
